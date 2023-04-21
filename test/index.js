@@ -1,10 +1,8 @@
 'use strict'
 
-const { Writable, Duplex, Readable } = require('node:stream')
-const path = require('path')
+const { Duplex, Readable } = require('node:stream')
 const test = require('ava')
 const each = require('..')
-const fs = require('fs')
 
 test('stream.Readable', async t => {
   const n = 100

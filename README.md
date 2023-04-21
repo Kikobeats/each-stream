@@ -4,7 +4,7 @@
 [![Coverage Status](https://img.shields.io/coveralls/Kikobeats/each-stream.svg?style=flat-square)](https://coveralls.io/github/Kikobeats/each-stream)
 [![NPM Status](https://img.shields.io/npm/dm/each-stream.svg?style=flat-square)](https://www.npmjs.org/package/each-stream)
 
-> Iterate all the data in a stream with async and concurrency support.
+> Iterate stream with async and concurrency support.
 
 ## Install
 
