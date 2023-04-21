@@ -76,9 +76,6 @@
     "*.js,!*.min.js,": [
       "prettier-standard"
     ],
-    "*.md": [
-      "standard-markdown"
-    ],
     "package.json": [
       "finepack"
     ]
