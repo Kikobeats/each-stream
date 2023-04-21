@@ -69,9 +69,6 @@
       "@commitlint/config-conventional"
     ]
   },
-  "exports": {
-    ".": "index.js"
-  },
   "nano-staged": {
     "*.js,!*.min.js,": [
       "prettier-standard"
