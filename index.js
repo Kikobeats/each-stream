@@ -5,7 +5,6 @@ const each = (
   fn,
   { concurrency = Number.MAX_SAFE_INTEGER, waiting = 100 } = {}
 ) => {
-  const end = stream.readable ? 'end' : 'finish'
   return new Promise((resolve, reject) => {
     let free = concurrency
 
@@ -21,7 +20,7 @@ const each = (
         await fn(data)
         if (++free === 1) stream.resume()
       })
-      .on(end, shouldResolve)
+      .on('end', shouldResolve)
       .on('error', reject)
   })
 }

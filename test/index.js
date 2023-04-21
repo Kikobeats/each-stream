@@ -1,10 +1,12 @@
 'use strict'
 
-const { Duplex, Readable } = require('node:stream')
+const { Writable, Duplex, Readable } = require('node:stream')
+const path = require('path')
 const test = require('ava')
 const each = require('..')
+const fs = require('fs')
 
-test('Readable', async t => {
+test('stream.Readable', async t => {
   const n = 100
   const input = [...Array(n).keys()]
   const readable = Readable.from(input)
@@ -19,7 +21,7 @@ test('Readable', async t => {
   t.deepEqual(input, output)
 })
 
-test('Duplex', async t => {
+test('stream.Duplex', async t => {
   const n = 100
   const input = [...Array(n).keys()]
   const readable = Duplex.from(input)
