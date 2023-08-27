@@ -6,19 +6,19 @@ const each = (
   { concurrency = Number.MAX_SAFE_INTEGER, waiting = 100 } = {}
 ) => {
   return new Promise((resolve, reject) => {
-    let free = concurrency
+    let slots = concurrency
 
     const shouldResolve = () => {
-      return !stream.isPaused() && free === concurrency
+      return !stream.isPaused() && slots === concurrency
         ? resolve()
         : setTimeout(shouldResolve, waiting)
     }
 
     stream
       .on('data', async data => {
-        if (--free === 0) stream.pause()
+        if (--slots === 0) stream.pause()
         await fn(data)
-        if (++free === 1) stream.resume()
+        if (++slots === 1) stream.resume()
       })
       .on('end', shouldResolve)
       .on('error', reject)
