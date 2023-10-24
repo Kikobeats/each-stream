@@ -2,7 +2,7 @@
   "name": "each-stream",
   "description": "Iterate stream with async and concurrency support.",
   "homepage": "https://nicedoc.io/Kikobeats/each-stream",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "src/index.js",
   "author": {
     "email": "josefrancisco.verdu@gmail.com",
